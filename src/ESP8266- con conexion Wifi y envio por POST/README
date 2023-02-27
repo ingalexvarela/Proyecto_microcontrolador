@@ -13,26 +13,40 @@ conectarse al sensor, dicho ejemplo fue escrito por ladyada, y es de dominio pú
 El código implementado para que la placa ESP8266 se conecte a red Wi-Fi, utiliza 
 las bibliotecas:
 
-ESP8266HTTPClient.h:
-ESP8266WiFiMulti.h:
-WiFiClient.h: proporciona métodos para crear un cliente que puede comunicarse con un servidor 
+ESP8266HTTPClient.h: permite enviar solicitudes HTTP a un servidor y recibir respuestas utilizando 
+el protocolo HTTP. La librería se encarga de manejar la conexión y la transmisión de datos a través 
+de la red WiFi
 
-El código para esta nueva etapa del proyecto incluye una función nueva llamada void EnvioDatos() 
+ESP8266WiFiMulti.h: permite la gestión de múltiples redes WiFi, busca redes WiFi en orden de 
+preferencia y se conecta automáticamente a la primera red disponible.
+
+WiFiClient.h: proporciona métodos para crear un cliente que puede comunicarse con un servidor. 
+
+El código para esta nueva etapa del proyecto incluye una función llamada void EnvioDatos() 
 para el envió de los datos de temperatura y humedad a un servidor web gratis 000webhost.com 
 utilizando el método POST. 
 
 
 ** Etapa 3: creación de archivos php que configuren el uso del servidor web gratis 000webhost.com. ** 
 
+El servidor web gratis enpleado es: https://co.000webhost.com/
+
 Nombre de los archivos y explicación de los mismos: 
 
 * La dirección de los mismos en el servidor web es la carpeta /public_html/
  
-- conexion.php: 
+- conexion.php: crea una conexión a una base de datos MySQL utilizando la extensión mysqli_connect().
+  y establece 4 variables: nombre de usuario, contraseña, nombre del servidor y nombre de la base de datos 
+  a la que se quiere conectar.  
 
-- EspPost.php
+- EspPost.php:  código PHP que utiliza una conexión a una base de datos MySQL para insertar registros en una 
+  tabla. Si se han enviado los datos, se construye una consulta SQL utilizando la función mysqli_query() para
+  insertar los valores de temperatura, humedad y fecha actual en la tabla TB_DHT11. 
 
-- index.php  codigó escrito en html para la configuración visual de la página web
+- index.php: código que configura una página HTML. La página tiene varios elementos HTML y estilos CSS para 
+  mostrar la medición de temperatura y humedad. También se incluye un script PHP para recuperar datos de la
+  base de datos y calcular el ángulo correspondiente para los valores de temperatura y humedad en una escala
+  de 0° a 180° para mostrar gráficamente los valores en barras de progreso circular diseñadas con estilos CSS.
 
 Todo lo anterior configura el uso de la placa ESP8266 conectada a una red Wi-Fi, que además hace la toma
 de lecturas de temperatura y humedad del DHT11 y realiza el envió de dichos datos a un servidor web gratis 
