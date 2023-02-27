@@ -1,0 +1,24 @@
+** Etapa 1: ESP8266 como punto de acceso Wi-Fi, lectura de temperatura y humedad del DHT11 y 
+se muestran en una página HTML servida por un servidor HTTP **
+
+Esta es la etapa 1 del proyecto diseñado para el curso IE-0624 Laboratorio de Microcontroladores.
+Acá se configura el uso de la placa ESP8266 como punto de acceso Wi-Fi, se leen los valores de 
+temperatura y humedad y se muestran en una página HTML servida por un servidor HTTP.
+
+El código implementado para la lectura de datos del sensor digital DHT11 a travez de un solo pin 
+de datos fue tomado de un ejemplo proporcionado por la la biblioteca DHT #include "DHT.h" para 
+conectarse al sensor, dicho ejemplo fue escrito por ladyada, y es de dominio público. 
+
+El código implementado para la operación de la placa ESP8266 como punto de acceso Wi-Fi, utiliza 
+las bibliotecas:
+
+ESP8266WiFi.h: proporciona métodos para conectarse a una red WiFi y crear un punto de acceso.
+WiFiClient.h: proporciona métodos para crear un cliente que puede comunicarse con un servidor 
+a través de TCP/IP.
+ESP8266WebServer.h: proporciona métodos para crear un servidor web que puede manejar solicitudes HTTP.
+
+El codigó escrito en html para la configuración visual de la página HTML servida por un servidor HTTP 
+fue desarrollada en el archivo index.html y luego integrada al codigó.  La página incluye secciones 
+para mostrar la temperatura y la humedad relativa, que se muestran en barras de progreso circulares 
+con lecturas en grados Celsius y porcentajes, respectivamente. El contenido de la página está 
+estilizado utilizando CSS con varias clases y propiedades para posicionar y estilizar los elementos.
