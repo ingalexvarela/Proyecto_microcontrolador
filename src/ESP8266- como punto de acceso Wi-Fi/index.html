@@ -1,0 +1,99 @@
+<!– Inicio de pagina con esta etiqueta –>
+    <html>
+
+
+    <!– Agrega titulos, idioma, tiempo de Refrescar pág, estilo, declaración, escalado de contenido–>
+
+        <head>
+            <meta name="viewport" content="width=device-width, user-scalable=no">
+            <meta http-equiv="refresh" content="5" charset="UTF-8">
+
+            <title>
+                Estación Meteorológica con IoT
+            </title>
+
+            <style>
+                body {
+                    font-family: monospace;
+                    background-color: rgb(4, 2, 7);
+                }
+
+                h1 {
+                    color: white;
+                    margin: 5px;
+                    text-align: center;
+                    margin: 50px;
+                    font-size: 18px;
+                }
+
+                .barraTemp {
+                    height: 200px;
+                    width: 190px;
+                    background-color: rgba(0, 0, 0, 0.795);
+                    margin: auto;
+                    border-radius: 50%;
+                    overflow: hidden;
+                }
+
+                .cont {
+                    height: 100px;
+                    width: 200px;
+                }
+
+                .CirculoCentro {
+                    height: 150px;
+                    width: 150px;
+                    background-color: rgb(4, 2, 7);
+                    border-radius: 50%;
+                    margin: auto;
+                    position: relative;
+                    margin: -175px auto 50px;
+                }
+
+                .Rectangulo {
+                    height: 100px;
+                    width: 200px;
+                    background-color: rgb(4, 2, 7);
+                    position: relative;
+                    margin: -125px auto 50px;
+                }
+            </style>
+        </head>
+
+        <!– Contenido de pagina, h1 son las escrituras, div figuras y sub figuras –>
+
+            <Body>
+                <h1>
+                    Mini Estación Meteorológica automática con IoT
+                </h1>
+
+                <h1>
+                    Temperatura
+                </h1>
+
+                <div class="barraTemp" style="transform: rotate(45deg);">
+                    <!– Aca se controla el giro de la barra –>
+                        <div class="cont" style="background-color: rgb(143, 136, 136);"> </div>
+                        <div class="cont" style="background-color: rgba(253, 114, 0, 0.986);"> </div>
+                </div>
+                <div class="CirculoCentro"></div>
+                <div class="Rectangulo"></div>
+                <h1 style="font-size: 22px; position: relative; margin: -125px auto 50px;">27.9 °C</h1>
+
+                <h1>
+                    Humedad Relativa
+                </h1>
+
+                <div class="barraTemp" style="transform: rotate(45deg);">
+                    <!– Aca se controla el giro de la barra –>
+                        <div class="cont" style="background-color: rgb(143, 136, 136);"> </div>
+                        <div class="cont" style="background-color: rgb(23, 218, 224);"> </div>
+                </div>
+                <div class="CirculoCentro"></div>
+                <div class="Rectangulo"></div>
+                <h1 style="font-size: 22px; position: relative; margin: -125px auto 50px;">50 %</h1>
+
+            </Body>
+
+    </html>
+    <!– Fin de pagina con esta etiqueta –>
