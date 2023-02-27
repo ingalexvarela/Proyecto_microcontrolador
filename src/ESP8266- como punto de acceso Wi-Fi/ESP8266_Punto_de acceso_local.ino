@@ -25,7 +25,7 @@ o con el enlace directo: https://github.com/nodemcu/nodemcu-devkit/raw/master/Dr
 const char *ssid = "ESTACION-IoT";  // Nombre de la red
 const char *password = "998877665"; // Contraseña
 
-// Variables para lectura del DHT 22
+// Variables para lectura del DHT 11
 float t; // Guarda temperatura grados
 float h; // Guarda Humedad relativa
 
