@@ -1,0 +1,19 @@
+El servidor web gratis empleado es: https://co.000webhost.com/
+
+1. Se debe crear cuenta en el servidor
+2. Crear proyecto 
+3. Crear base de datos
+4. Crear tabla dentro de la base de datos: configurar con el nombre TB_DHT11
+5. Agregar las columnas: Id, Temperatura, Humedad, fecha_actual
+6. Finalmente se debe agregar los siguientes archivos a la carpeta /public_html/
+                     conexion.php
+                     EspPost.php:
+                     index.php
+
+7. El último paso es modificar en el código Wifi_POST_SQL la linea:
+http.begin(client, "http://esp8266alfa.000webhostapp.com/EspPost.php"); // acá va la dirreción de del servidor web, proyecto y archivo php
+
+Se debe cambiar esta dirección por la del proyecto creado por el usuario "http://« esp8266alfa.000webhostapp.com »/EspPost.php", se debe 
+cambiar la parte entre las comillas « » y eliminar las comillas: 
+
+http.begin(client, "http://ACA_VA_LA_NUEVA_DIRRECIÓN/EspPost.php"); // acá va la dirreción de del servidor web, proyecto y archivo php

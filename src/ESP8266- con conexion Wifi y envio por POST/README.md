@@ -1,3 +1,18 @@
+# Estación Meteorológica con IoT
+
+Este proyecto configura el uso de la ESP8266, Un sensor DHT11 y un servidor web.
+
+
+- [Sitio web del proyecto](http://esp8266alfa.000webhostapp.com/)
+## Tabla de contenidos
+
+- [Investigación](#investigación)
+- [Instalación](#instalación)
+- [Uso](#Uso)
+- [Licencia](#licencia)
+- [Contacto](#contacto)
+
+## Investigación
 ** Etapa 2: ESP8266 conectado a red Wi-Fi, lectura de temperatura y humedad del DHT11 y envió 
 de datos a un servidor web gratis 000webhost.com utilizando un método POST.  **       
 
@@ -53,3 +68,35 @@ de lecturas de temperatura y humedad del DHT11 y realiza el envió de dichos dat
 000webhost.com utilizando un método POST, donde se alberga una base de datos que recopila los datos y donde
 se configuraron los archivos php para realizar consultas SQL a la base de datos y presentar los datos que 
 están siendo registrados en una pagina web configurada previamente.   
+
+## Instalación
+
+Modificación del ejemplo de boceto de prueba para varios sensores de temperatura/humedad DHT
+escrito por ladyada, public domain.
+
+REQUIERE las siguientes bibliotecas de Arduino:
+- DHT Sensor Library: https://github.com/adafruit/DHT-sensor-library
+- Adafruit Unified Sensor Lib: https://github.com/adafruit/Adafruit_Sensor
+
+REQUIERE Instalar Plugin del ESP8266 para Arduino.
+- ir a archivo>Preferencias y en la casilla  “Gestor de URLs Adicionales de Tarjetas”
+- agregamos: http://arduino.esp8266.com/stable/package_esp8266com_index.json
+
+REQUIERE Instalar controladores del puerto COM virtual (VCP) del puente USB a UART CP210x
+necesarios para el funcionamiento del dispositivo como un puerto COM virtual
+se puede bajar de: https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads
+o con el enlace directo: https://github.com/nodemcu/nodemcu-devkit/raw/master/Drivers/CH341SER_WINDOWS.zip
+
+
+## Uso 
+
+Cargar desde ArduinoIDE a la placa esp8266 y abrir desde cualquier navegador con internet el sitio web: http://esp8266alfa.000webhostapp.com/
+## Licencia
+
+Creative Commons Legal Code CC0 1.0 Universal, Consulte la licencia para más detalles: https://creativecommons.org/publicdomain/zero/1.0/
+
+## Contacto
+
+correo: alex.varela@ucr.ac.cr tel: +50685525005
+
+[![iconopeque.jpg](https://i.postimg.cc/hvtdRL0p/iconopeque.jpg)](https://postimg.cc/k6L4xtzb)
