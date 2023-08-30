@@ -1,24 +1,26 @@
+// Modificación del ejemplo de boceto de prueba para varios sensores de temperatura/humedad DHT
+// escrito por ladyada, public domain.
 
 // REQUIERE las siguientes bibliotecas de Arduino:
 // - DHT Sensor Library: https://github.com/adafruit/DHT-sensor-library
 // - Adafruit Unified Sensor Lib: https://github.com/adafruit/Adafruit_Sensor
 
-// REQUIERE Instalar Plugin del ESP32 para Arduino.
+// REQUIERE Instalar Plugin del ESP8266 para Arduino.
 // - ir a archivo>Preferencias y en la casilla  “Gestor de URLs Adicionales de Tarjetas”
-// - agregamos: https://dl.espressif.com/dl/package_esp32_index.json  https://resource.heltec.cn/download/package_heltec_esp32_index.json
+// - agregamos: http://arduino.esp8266.com/stable/package_esp8266com_index.json
 
 // REQUIERE Instalar controladores del puerto COM virtual (VCP) del puente USB a UART CP210x
 /* necesarios para el funcionamiento del dispositivo como un puerto COM virtual
 se puede bajar de: https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads
 o con el enlace directo: https://github.com/nodemcu/nodemcu-devkit/raw/master/Drivers/CH341SER_WINDOWS.zip */
 
-// Librerias conexion Wifi - cliente ESP32
+// Librerias conexion Wifi - cliente ESp8266
 #include <HTTPClient.h> // Incluye la librería HTTPClient para realizar solicitudes HTTP.
 #include <WiFiMulti.h>  // Incluye la librería WiFiMulti para gestionar conexiones WiFi.
 #include <WiFiClient.h>        // Incluye la librería WiFiClient para crear clientes WiFi.
 
 // defino credenciales de la red wifi
-const char *ssid = "Rincon Violeta 3F";     // Define el nombre de la red WiFi a la que se conectará el dispositivo.
+const char *ssid = "Rincon Violeta 2F";     // Define el nombre de la red WiFi a la que se conectará el dispositivo.
 const char *password = "rinconvioleta2392"; // Define la contraseña de la red WiFi.
 
 // Variables para lectura del DHT 11
@@ -85,7 +87,7 @@ void EnvioDatos()
     String datos_a_enviar = "temperatura=" + String(t) + "&humedad=" + String(h);
 
     // Inicia la comunicación HTTP con la URL indicada y especifica que se usará texto plano
-    http.begin(client, "http://esp32omega.000webhostapp.com/EspPost.php");   
+    http.begin(client, "http://esp32omega.000webhostapp.com/EspPost.php");
     http.addHeader("Content-Type", "application/x-www-form-urlencoded");
 
     // Envía los datos al servidor web utilizando el método POST y almacena el código de respuesta HTTP
